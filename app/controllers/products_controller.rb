@@ -19,9 +19,13 @@ class ProductsController < ApplicationController
   end
 
   def create
-    Product.create(product_params)
-    redirect_to products_path
-  end
+      @product = Product.create(product_params)
+      if @product.save
+        redirect_to products_path
+      else
+        render product_new_path
+      end
+    end
 
   private
 
