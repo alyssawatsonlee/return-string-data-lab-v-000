@@ -25,7 +25,7 @@ class ProductsController < ApplicationController
       else
         render product_new_path
       end
-    end
+  end
 
   private
 
